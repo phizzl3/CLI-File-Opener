@@ -1,5 +1,6 @@
 """
-Open an output file based on detected Operating System.
+Open a specified (passed) file in it's default application
+based on detected Operating System.
 Supports Windows, Mac, & Linux.
 """
 
@@ -7,7 +8,7 @@ import platform
 
 
 def openfile(f_path: str) -> None:
-    """Open an output file based on Operating System.
+    """Open specified file based on detected Operating System.
     Supports Windows, Mac, & Linux.
 
     Args:
