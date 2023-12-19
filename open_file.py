@@ -7,6 +7,7 @@ Supports Windows, Mac, & Linux.
 import platform
 import subprocess
 
+
 def open_file(file_path: str) -> None:
     """Open specified file based on detected Operating System.
     Supports Windows, Mac, & Linux.
@@ -23,4 +24,4 @@ def open_file(file_path: str) -> None:
         "Linux": ["xdg-open", file_path],
     }
     # Run open command based on above.
-    subprocess.run(command.get(operating_system), check=True)
+    subprocess.run(command.get(operating_system), check=True, shell=True)
