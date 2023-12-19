@@ -4,6 +4,8 @@ based on detected Operating System.
 Supports Windows, Mac, & Linux.
 """
 
+
+import os
 import platform
 import subprocess
 
@@ -17,13 +19,14 @@ def open_file(file_path: str) -> None:
     """
     # Get Operating System
     operating_system = platform.system()
-    # Operating Systems and their associated commands.
-    command = {
-        "Windows": f"start {file_path}",
-        "Darwin": f"open {file_path}",
-        "Linux": f"xdg-open {file_path}",
-        "NA": "echo \"Operating System not supported\""
+    # Subprocess Operating Systems and their associated commands.
+    subprocess_commands = {
+        "Darwin": f"open \"{file_path}\"",
+        "Linux": f"xdg-open \"{file_path}\"",
     }
-    # Run open command based on above.
-    subprocess.run(command.get(operating_system,
-                   command["NA"]), check=True, shell=True)
+    # Open based on detected operating system.
+    if operating_system == "Windows":
+        os.startfile(file_path)
+    if operating_system in subprocess_commands:
+        subprocess.run(subprocess_commands[operating_system],
+                       check=True, shell=True)
