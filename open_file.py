@@ -13,15 +13,17 @@ def open_file(file_path: str) -> None:
     Supports Windows, Mac, & Linux.
 
     Args:
-        file_path (str): Filepath for the file to be opened.
+        file_path (str): File path for the file to be opened.
     """
     # Get Operating System
     operating_system = platform.system()
     # Operating Systems and their associated commands.
     command = {
-        "Windows": ["start", file_path],
-        "Darwin": ["open", file_path],
-        "Linux": ["xdg-open", file_path],
+        "Windows": f"start {file_path}",
+        "Darwin": f"open {file_path}",
+        "Linux": f"xdg-open {file_path}",
+        "NA": "echo \"Operating System not supported\""
     }
     # Run open command based on above.
-    subprocess.run(command.get(operating_system), check=True, shell=True)
+    subprocess.run(command.get(operating_system,
+                   command["NA"]), check=True, shell=True)
