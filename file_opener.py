@@ -1,7 +1,11 @@
 """
+
 Open a specified (passed) file path in it's default application
 based on detected Operating System.
 Supports Windows, Mac, & Linux.
+
+Rev: 12/20/2023
+
 """
 
 
