@@ -7,7 +7,7 @@ Supports Windows, Mac, & Linux.
 Usage:  
 
 ```bash
-from file_opener import openfile
+from fileopen import openfile
 
-open_file("~/Desktop/test.txt")
+openfile("~/Desktop/test.txt")
 ```

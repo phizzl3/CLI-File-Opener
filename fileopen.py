@@ -4,9 +4,9 @@ Open a specified (passed) file path in it's default application
 based on detected Operating System.
 Supports Windows, Mac, & Linux.
 
-Rev: 12/20/2023
-
 """
+
+__version__ = "1.0.0"
 
 
 import os
@@ -14,7 +14,7 @@ import platform
 import subprocess
 
 
-def open_file(file_path: str) -> None:
+def openfile(file_path: str) -> None:
     """Open specified file based on detected Operating System.
     Supports Windows, Mac, & Linux.
 
@@ -33,4 +33,4 @@ def open_file(file_path: str) -> None:
         os.startfile(file_path)
     if operating_system in subprocess_commands:
         subprocess.run(subprocess_commands[operating_system],
-                       check=True, shell=True)
+                       check=False, shell=True)
