@@ -14,7 +14,7 @@ import platform
 import subprocess
 
 
-def openfile(file_path: str) -> None:
+def open_file(file_path: str) -> None:
     """Open specified file based on detected Operating System.
     Supports Windows, Mac, & Linux.
 
