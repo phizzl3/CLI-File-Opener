@@ -2,12 +2,11 @@
 
 Open a specified (passed) file in it's default application
 based on detected Operating System.
-Supports Windows, Mac, & Linux.
 
-Usage:  
+## Usage
 
 ```bash
-from fileopen import openfile
+from openfile import open_file
 
-openfile("~/Desktop/test.txt")
+open_file("~/Desktop/test.txt")
 ```
